@@ -105,8 +105,15 @@
                         <li><a href="{{ route('payment_aqiqah') }}">Fullpayment</a></li> <!-- Full Payment -->
                     </ul>
                 </li>
-                <li>
-                    <a href="{{ route('famillys') }}">Personal Photo</a>
+                <li class="treeview">
+                    <a href="#!">
+                        <span class="menu-text">Personal</span>
+                    </a>
+                    <!-- Prewedding Sub-menu -->
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('dp_personal') }}">DP</a></li> <!-- Deposit Payment -->
+                        <li><a href="{{ route('payment_personal') }}">Fullpayment</a></li> <!-- Full Payment -->
+                    </ul>
                 </li>
                 <li>
                     <a href="{{ route('famillys') }}">Group Photo</a>

@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\Transaction\Resevasi_AqiController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_AqiFullController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_EngController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_EngFullController;
+use App\Http\Controllers\Admin\Transaction\Resevasi_PerController;
+use App\Http\Controllers\Admin\Transaction\Resevasi_PerFullController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_PreController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_PreFullController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_WedController;
@@ -21,6 +23,7 @@ use App\Http\Controllers\Admin\WeddingController;
 use App\Http\Controllers\Aqiqah_TransactionController;
 use App\Http\Controllers\Engagement_TransactionController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Personal_TransactionController;
 use App\Http\Controllers\Prewedding_TransactionController;
 use App\Http\Controllers\Wedding_TransactionController;
 use Illuminate\Support\Facades\Auth;
@@ -151,9 +154,25 @@ Route::middleware(['auth','is_admin'])->group(function(){
     Route::get('Transaction/{id}/payment',[Resevasi_AqiFullController::class,'end_dp'])->name('admin.transaksi.pay_selesai');
     Route::put('Trasaction/{id}/payment',[Resevasi_AqiFullController::class,'reject'])->name('admin.transaksi.pay_reject');
     Route::delete('Trasaction/{id}/payment',[Resevasi_AqiFullController::class,'destroy'])->name('admin.transaksi.delete');
+   
+    #transaction personal
+    #deposit
+    Route::get('/admin/Transaction/deposit-personal',[Resevasi_PerController::class, 'index'])->name('dp_personal');
+    Route::put('Transaction/{id}/Confirmations/dp', [Resevasi_PerController::class,'confirmation_dp'])->name('transaksi.confirmation_dp');
+    Route::get('Transaction/{id}/end',[Resevasi_PerController::class,'end_dp'])->name('admin.transaksi.dp_selesai');
+    Route::put('Trasaction/{id}',[Resevasi_PerController::class,'reject'])->name('admin.transaksi.dp_reject');
+    Route::delete('Trasaction/{id}',[Resevasi_PerController::class,'destroy'])->name('admin.transaksi.delete');
+    #Fullpayment
+    Route::get('/admin/Transaction/payment-personal',[Resevasi_PerFullController::class, 'index'])->name('payment_personal');
+    Route::put('Transaction/{id}/Confirmations/payment', [Resevasi_PerFullController::class,'confirmation_pay'])->name('transaksi.confirmation_pay');
+    Route::get('Transaction/{id}/payment',[Resevasi_PerFullController::class,'end_dp'])->name('admin.transaksi.pay_selesai');
+    Route::put('Trasaction/{id}/payment',[Resevasi_PerFullController::class,'reject'])->name('admin.transaksi.pay_reject');
+    Route::delete('Trasaction/{id}/payment',[Resevasi_PerFullController::class,'destroy'])->name('admin.transaksi.delete');
     
     
 });
+
+#COSTUMER
 Route::middleware(['auth'])->group(function(){
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
@@ -206,6 +225,16 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/transaction/{id}/dp', [Aqiqah_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_aqi');
     Route::put('/transaction/{id}/pay', [Aqiqah_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_aqi');
     Route::delete('trasaction/{id}',[Aqiqah_TransactionController::class,'destroy'])->name('transaction.destroy');
+   
+    #reservations_personal
+    Route::get('/personal/{personal}',[Personal_TransactionController::class, 'reservation'])->name('reservation_personal');
+    Route::post('/personal/store',[Personal_TransactionController::class, 'store_per'])->name('store_personal');
+    #trasanctions_personal
+    Route::get('/transaction-personal', [Personal_TransactionController::class, 'transactions_per'])->name('transaction_personal');
+    Route::get('/transaction/{id}', [Personal_TransactionController::class, 'payment_dp'])->name('transaction_dp');
+    Route::put('/transaction/{id}/dp', [Personal_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_per');
+    Route::put('/transaction/{id}/pay', [Personal_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_per');
+    Route::delete('trasaction/{id}',[Personal_TransactionController::class,'destroy'])->name('transaction.destroy');
 
 
 

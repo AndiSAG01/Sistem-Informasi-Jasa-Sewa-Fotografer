@@ -67,7 +67,7 @@
                                             <p>
                                                 <i>{!! $pw->description !!}</i>
                                             </p>
-                                            <a href="#" class="btn btn-success">Reservation</a>
+                                            <a href="{{ route('reservation_personal', $pw->id) }}" class="btn btn-success">Reservation</a>
                                         </div>
                                     </div>
                                 </div>
