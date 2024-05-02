@@ -13,6 +13,7 @@ use App\Models\Resevasi_Pre;
 use App\Models\User;
 use App\Models\Wedding;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -66,5 +67,16 @@ class HomeController extends Controller
     {
         $familly = Familly::all();
         return view('user.graduation.familly', compact('familly'));
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

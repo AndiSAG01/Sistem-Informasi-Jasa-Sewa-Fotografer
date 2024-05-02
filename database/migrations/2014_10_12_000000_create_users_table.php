@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('phone_number');
             $table->string('photo');
-            $table->boolean('isAdmin');
+            $table->boolean('is_admin')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

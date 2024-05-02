@@ -18,10 +18,8 @@
                             <div class="col-lg-8 text-center">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <img class="mb-4" src="asset/img/wedding/wed1.jpg" alt=""
-                                            width="400px">
-                                        <img class="mb-4" src="asset/img/wedding/wed4.jpg" alt=""
-                                            width="400px">
+                                        <img class="mb-4" src="asset/img/aqiqah/aq1.jpeg" alt=""
+                                            width="450px">
                                     </div>
                                 </div>
                             </div>
@@ -32,8 +30,8 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-lg-12">
-                                <img src="asset/img/wedding/wed2.jpg" alt="" width="500px">
-                                <img src="asset/img/wedding/wed3.jpg" alt="" width="500px">
+                                <img src="asset/img/aqiqah/aq2.jpeg" alt="" width="500px">
+                                <img src="asset/img/aqiqah/aq3.jpeg" alt="" width="500px">
                             </div>
                         </div>
                     </div>
@@ -65,7 +63,7 @@
                                             <p>
                                                 <i>{!! $pw->description !!}</i>
                                             </p>
-                                            <a href="#" class="btn btn-success">Reservation</a>
+                                            <a href="{{ route('reservation_aqiqah', $pw->id) }}" class="btn btn-success">Reservation</a>
                                         </div>
                                     </div>
                                 </div>

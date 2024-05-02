@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
 class isAdmin
@@ -14,12 +15,12 @@ class isAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() &&  Auth::user()->isAdmin == true) {
+        if (Auth::user() && Auth::user()->is_admin == 1) {
             return $next($request);
-       }
-
-       return back()->with('error','Opps, You\'re not Admin');
+        }
+    
+        return redirect()->route('home')->with('error', 'You are not allowed to access this page.');
     }
 }

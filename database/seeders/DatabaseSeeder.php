@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
                 'phone_number'=>'123456789',
                 'photo'=> $filePath,
                 'email_verified_at'=> now(),
-                'isAdmin' => 1
+                'is_admin' => 1
                 
             ]
         ]);

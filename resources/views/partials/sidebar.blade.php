@@ -69,20 +69,41 @@
                     </a>
                     <!-- Prewedding Sub-menu -->
                     <ul class="treeview-menu">
-                        <li><a href="{{ route('index_dp') }}">DP</a></li> <!-- Deposit Payment -->
-                        <li><a href="{{ route('index_payment') }}">Fullpayment</a></li> <!-- Full Payment -->
+                        <li><a href="{{ route('index_dp_prewedding') }}">DP</a></li> <!-- Deposit Payment -->
+                        <li><a href="{{ route('index_payment_prewedding') }}">Fullpayment</a></li> <!-- Full Payment -->
                     </ul>
                 </li>
         
                 <!-- Other Sections -->
-                <li>
-                    <a href="{{ route('groups') }}">Wedding</a>
+                <li class="treeview">
+                    <a href="#!">
+                        <span class="menu-text">Wedding</span>
+                    </a>
+                    <!-- Prewedding Sub-menu -->
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('index_dp_wedding') }}">DP</a></li> <!-- Deposit Payment -->
+                        <li><a href="{{ route('index_payment_wedding') }}">Fullpayment</a></li> <!-- Full Payment -->
+                    </ul>
                 </li>
-                <li>
-                    <a href="{{ route('famillys') }}">Engagement</a>
+                <li class="treeview">
+                    <a href="#!">
+                        <span class="menu-text">Engagement</span>
+                    </a>
+                    <!-- Prewedding Sub-menu -->
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('dp_engagement') }}">DP</a></li> <!-- Deposit Payment -->
+                        <li><a href="{{ route('payment_engagement') }}">Fullpayment</a></li> <!-- Full Payment -->
+                    </ul>
                 </li>
-                <li>
-                    <a href="{{ route('famillys') }}">Aqiqah</a>
+                <li class="treeview">
+                    <a href="#!">
+                        <span class="menu-text">Aqiqah</span>
+                    </a>
+                    <!-- Prewedding Sub-menu -->
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('dp_aqiqah') }}">DP</a></li> <!-- Deposit Payment -->
+                        <li><a href="{{ route('payment_aqiqah') }}">Fullpayment</a></li> <!-- Full Payment -->
+                    </ul>
                 </li>
                 <li>
                     <a href="{{ route('famillys') }}">Personal Photo</a>

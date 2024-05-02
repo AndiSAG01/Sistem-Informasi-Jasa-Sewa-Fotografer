@@ -147,7 +147,7 @@
                                         </form>
             
                                         @elseif ($us->status_pay == null )
-                                        <form action="{{ Route('admin.transaksi.reject', $us->id) }}" method="post">
+                                        <form action="{{ Route('admin.transaksi.pay_reject', $us->id) }}" method="post">
                                             @csrf
                                             @method('put')
                                             <button type="submit" class="btn btn-danger">Tolak</button>

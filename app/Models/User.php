@@ -27,7 +27,7 @@ class User extends Authenticatable
         "gender",
         "phone_number",
         "photo",
-        "isAdmin",
+        "is_admin",
     ];
 
     /**
@@ -58,6 +58,16 @@ class User extends Authenticatable
     public function reservasi_pres(): HasMany
     {
         return $this->hasMany(Resevasi_Pre::class,'user_id');
+    }
+
+    /**
+     * Get all of the resevasi_webs for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function reservasi_webs(): HasMany
+    {
+        return $this->hasMany(Resevasi_wed::class, 'user_id');
     }
 
     

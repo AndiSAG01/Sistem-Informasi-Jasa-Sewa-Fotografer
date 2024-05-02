@@ -64,5 +64,9 @@ class Basic extends Model
     {
         return $this->hasMany(Familly::class);
     }
+    public function resevasi_webs(): HasMany
+    {
+        return $this->hasMany(Resevasi_wed::class);
+    }
 
 }

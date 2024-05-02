@@ -34,8 +34,8 @@ class RegisterController extends Controller
     protected $redirectTo = RouteServiceProvider::HOME;
     protected function redirectTo()
     {
-        if (auth()->user()->isAdmin == 1) {
-            return 'admin';
+        if (auth()->user()->is_admin == 1) {
+            return '/admin';
         }
         return '/';
     }
@@ -89,7 +89,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'isAdmin' => false,
+            'is_admin' => 0,
             'gender' => $data['gender'],
             'alamat' => $data['alamat'],
             'phone_number' => $data['phone_number'],

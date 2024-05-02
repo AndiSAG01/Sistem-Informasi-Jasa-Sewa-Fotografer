@@ -159,8 +159,11 @@
 											class="icon-gitlab fs-4 me-3"></i>User Profile</a>
 									<a class="dropdown-item d-flex align-items-center py-2" href="account-settings.html"><i
 											class="icon-settings fs-4 me-3"></i>Account Settings</a>
-									<a class="dropdown-item d-flex align-items-center py-2" href="login.html"><i
-											class="icon-log-out fs-4 me-3"></i>Logout</a>
+									<form action="{{ route('logout') }}" method="post">
+										@csrf
+										<button class="dropdown-item d-flex align-items-center py-2" type="submit"><i
+												class="icon-log-out fs-4 me-3"></i>Logout</button>
+									</form>
 								</div>
 							</div>
 						</div>

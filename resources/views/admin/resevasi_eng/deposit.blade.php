@@ -7,7 +7,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="#">PreWedding</a></li>
+                <li class="breadcrumb-item"><a href="#">Engagement</a></li>
                 <li class="breadcrumb-item"><a href="#">Deposit</a></li>
             </ol>
         </nav>
@@ -39,7 +39,7 @@
         <div class="card mb-4">
             <div class="card-body">
                 <div class="mb-2 d-flex align-items-end justify-content-between">
-                    <h5 class="card-title">Data Transaction Package PreWedding</h5>
+                    <h5 class="card-title">Data Transaction Package Engagement</h5>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered align-middle m-0">
@@ -101,7 +101,7 @@
                                     <td class="text-white">{{ $us->selected }}</td>
                                     <td class="text-white">{{ $us->basic->name }}</td>
                                     <td class="text-white">Rp.
-                                        {{ number_format($us->prewedding->price, 2, '.', ',') }}</td>
+                                        {{ number_format($us->engagement->price, 2, '.', ',') }}</td>
                                     <td class="text-white">{{ $us->date }}</td>
                                     <td class="text-white">{{ $us->address }}</td>
                                         <td>

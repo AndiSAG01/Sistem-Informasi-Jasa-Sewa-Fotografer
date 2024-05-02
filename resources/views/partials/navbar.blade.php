@@ -32,8 +32,8 @@
               <li class="dropdown">
                 <a href="#">Guide</a>
                 <ul>
-                  <li><a href="{{ route('transaction') }}">Prewedding</a></li> 
-                  <li><a href="">Wedding</a></li>    
+                  <li><a href="{{ route('transaction_prewedding') }}">Prewedding</a></li> 
+                  <li><a href="{{ route('transaction_wedding') }}">Wedding</a></li>    
                   <li><a href="">Engagement</a></li>  
                   <li><a href="">Aqiqah</a></li>      
                 </ul>
@@ -50,7 +50,12 @@
             </ul>
           </li>          
           <li><a href="contact.html">History Transaction</a></li>
-          <li><a href="">Logout</a></li>
+          <form action="{{ route('logout') }}" method="post">
+          <li>
+              @csrf
+              <button type="submit">Logout</button>
+            </li>
+          </form>
         </ul>
       </nav>
 
