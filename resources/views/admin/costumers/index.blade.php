@@ -35,47 +35,47 @@
                     <h5 class="card-title">Data Costumers</h5>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered align-middle m-0">
+                    <table id="example" class="table table-striped table-bordered align-middle m-0">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>
+                                <th width="50px">#</th>
+                                <th width="100px">
                                     <div class="d-flex align-items-center">
                                         <span class="icon-code me-2 fs-4"></span>
                                         Code
                                     </div>
                                 </th>
-                                <th>
+                                <th width="200px">
                                     <div class="d-flex align-items-center">
                                         <span class="icon-user me-2 fs-4"></span>
                                         Assignee
                                     </div>
                                 </th>
-                                <th>
+                                <th width="150px">
                                     <div class="d-flex align-items-center">
                                         <span class="icon-email me-2 fs-4"></span>
                                         Email
                                     </div>
                                 </th>
-                                <th>
+                                <th width="300px">
                                     <div class="d-flex align-items-center">
                                         <span class="icon-developer_mode me-2 fs-4"></span>
                                         Address
                                     </div>
                                 </th>
-                                <th>
+                                <th width="100px">
                                     <div class="d-flex align-items-center">
                                         <span class="icon-group me-2 fs-4"></span>
                                         Gender
                                     </div>
                                 </th>
-                                <th>
+                                <th width="100px">
                                     <div class="d-flex align-items-center">
                                         <span class="icon-phone me-2 fs-4"></span>
                                         Phone Number
                                     </div>
                                 </th>
-                                <th>
+                                <th width="150px">
                                     <div class="d-flex align-items-center">
                                         <span class="icon-settings me-2 fs-4"></span>
                                         Action

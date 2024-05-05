@@ -37,12 +37,12 @@
 <div class="row">
     <div class="col-12">
         <div class="card mb-4">
-            <div class="card-body">
+            <div class="card-body bg-black">
                 <div class="mb-2 d-flex align-items-end justify-content-between">
-                    <h5 class="card-title">Data Transaction Package PreWedding</h5>
+                    <h5 class="card-title">Data Transaction Package Personal</h5>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered align-middle m-0">
+                    <table id="example" class="table table-striped table-bordered align-middle m-0">
                         <thead>
                             <tr>
                                 <th class="text-white" width="50px">#</th>
@@ -142,7 +142,6 @@
                                         <form action="{{ Route('transaksi.confirmation_pay', $us->id) }}" method="post">
                                             @csrf
                                             @method('put')
-            
                                             <button type="submit" class="btn btn-primary">Konfirmasi</button>
                                         </form>
             

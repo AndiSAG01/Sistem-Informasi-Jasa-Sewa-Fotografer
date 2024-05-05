@@ -107,7 +107,7 @@
                 </li>
                 <li class="treeview">
                     <a href="#!">
-                        <span class="menu-text">Personal</span>
+                        <span class="menu-text">Personal Photo</span>
                     </a>
                     <!-- Prewedding Sub-menu -->
                     <ul class="treeview-menu">
@@ -115,11 +115,25 @@
                         <li><a href="{{ route('payment_personal') }}">Fullpayment</a></li> <!-- Full Payment -->
                     </ul>
                 </li>
-                <li>
-                    <a href="{{ route('famillys') }}">Group Photo</a>
+                <li class="treeview">
+                    <a href="#!">
+                        <span class="menu-text">Group Photo</span>
+                    </a>
+                    <!-- Prewedding Sub-menu -->
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('dp_group') }}">DP</a></li> <!-- Deposit Payment -->
+                        <li><a href="{{ route('payment_group') }}">Fullpayment</a></li> <!-- Full Payment -->
+                    </ul>
                 </li>
-                <li>
-                    <a href="{{ route('famillys') }}">Familly Photo</a>
+                <li class="treeview">
+                    <a href="#!">
+                        <span class="menu-text">Familly Photo</span>
+                    </a>
+                    <!-- Prewedding Sub-menu -->
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('dp_familly') }}">DP</a></li> <!-- Deposit Payment -->
+                        <li><a href="{{ route('payment_familly') }}">Fullpayment</a></li> <!-- Full Payment -->
+                    </ul>
                 </li>
             </ul>
         </li>
@@ -131,10 +145,10 @@
             </a>
             <ul class="treeview-menu">
                 <li>
-                    <a href="apex.html">Costumers</a>
+                    <a href="{{ route('costumers.report') }}">Costumers</a>
                 </li>
                 <li>
-                    <a href="morris.html">Transactions</a>
+                    <a href="{{ route('laporan') }}">Transactions</a>
                 </li>
             </ul>
         </li>

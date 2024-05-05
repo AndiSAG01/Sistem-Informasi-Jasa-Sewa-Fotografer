@@ -10,7 +10,7 @@ class CostumerController extends Controller
 {
     public function index()
     {
-        $user = User::where('isAdmin', 0)->get();
+        $user = User::where('is_admin', 0)->get();
         return view('admin.costumers.index', compact('user'));
     }
 
@@ -27,5 +27,11 @@ class CostumerController extends Controller
         User::where('id', $id)->delete();
 
         return redirect()->back()->with('danger','Costumers Successfully Deleted');
+    }
+
+    public function report()
+    {
+        $user = User::where('is_admin', 0)->get();
+        return view('admin.costumers.report', compact('user'));
     }
 }

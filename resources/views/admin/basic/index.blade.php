@@ -36,13 +36,13 @@
 <div class="row">
     <div class="col-12">
         <div class="card mb-4">
-            <div class="card-body">
+            <div class="card-body bg-black">
                 <div class="mb-2 d-flex align-items-end justify-content-between">
                     <h5 class="card-title">Data Package Basic</h5>
                 </div>
                @include('admin.basic.create')
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered align-middle m-0">
+                    <table id="example" class="table table-striped table-bordered align-middle m-0">
                         <thead>
                             <tr>
                                 <th>#</th>

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Group extends Model
 {
@@ -26,5 +27,10 @@ class Group extends Model
     public function basic(): BelongsTo
     {
         return $this->belongsTo(Basic::class, 'basics_id');
+    }
+
+    public function resevasi_gro(): HasMany
+    {
+        return $this->hasMany(Resevasi_gro::class);
     }
 }

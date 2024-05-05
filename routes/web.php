@@ -13,6 +13,10 @@ use App\Http\Controllers\Admin\Transaction\Resevasi_AqiController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_AqiFullController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_EngController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_EngFullController;
+use App\Http\Controllers\Admin\Transaction\Resevasi_FamController;
+use App\Http\Controllers\Admin\Transaction\Resevasi_FamFullController;
+use App\Http\Controllers\Admin\Transaction\Resevasi_GroController;
+use App\Http\Controllers\Admin\Transaction\Resevasi_GroFullController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_PerController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_PerFullController;
 use App\Http\Controllers\Admin\Transaction\Resevasi_PreController;
@@ -22,6 +26,8 @@ use App\Http\Controllers\Admin\Transaction\Resevasi_WedFullController;
 use App\Http\Controllers\Admin\WeddingController;
 use App\Http\Controllers\Aqiqah_TransactionController;
 use App\Http\Controllers\Engagement_TransactionController;
+use App\Http\Controllers\Familly_TransactionController;
+use App\Http\Controllers\Group_TransactionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Personal_TransactionController;
 use App\Http\Controllers\Prewedding_TransactionController;
@@ -49,6 +55,7 @@ Route::middleware(['auth','is_admin'])->group(function(){
     Route::get('/admin/costumers',[CostumerController::class, 'index'])->name('costumers');
     Route::get('/admin/costumers/{id}',[CostumerController::class, 'detail'])->name('costumers.detail');
     Route::delete('/admin/costumers/{id}',[CostumerController::class, 'destroy'])->name('costumers.destroy');
+    Route::get('/admin/report',[CostumerController::class, 'report'])->name('costumers.report');
 
     #package Basic
     Route::get('/admin/package-basics',[BasicController::class, 'index'])->name('basics');
@@ -169,7 +176,42 @@ Route::middleware(['auth','is_admin'])->group(function(){
     Route::put('Trasaction/{id}/payment',[Resevasi_PerFullController::class,'reject'])->name('admin.transaksi.pay_reject');
     Route::delete('Trasaction/{id}/payment',[Resevasi_PerFullController::class,'destroy'])->name('admin.transaksi.delete');
     
+    #transaction group
+    #deposit
+    Route::get('/admin/Transaction/deposit-group',[Resevasi_GroController::class, 'index'])->name('dp_group');
+    Route::put('Transaction/{id}/Confirmations/dp', [Resevasi_GroController::class,'confirmation_dp'])->name('transaksi.confirmation_dp');
+    Route::get('Transaction/{id}/end',[Resevasi_GroController::class,'end_dp'])->name('admin.transaksi.dp_selesai');
+    Route::put('Trasaction/{id}',[Resevasi_GroController::class,'reject'])->name('admin.transaksi.dp_reject');
+    Route::delete('Trasaction/{id}',[Resevasi_GroController::class,'destroy'])->name('admin.transaksi.delete');
+    #Fullpayment
+    Route::get('/admin/Transaction/payment-group',[Resevasi_GroFullController::class, 'index'])->name('payment_group');
+    Route::put('Transaction/{id}/Confirmations/payment', [Resevasi_GroFullController::class,'confirmation_pay'])->name('transaksi.confirmation_pay');
+    Route::get('Transaction/{id}/payment',[Resevasi_GroFullController::class,'end_dp'])->name('admin.transaksi.pay_selesai');
+    Route::put('Trasaction/{id}/payment',[Resevasi_GroFullController::class,'reject'])->name('admin.transaksi.pay_reject');
+    Route::delete('Trasaction/{id}/payment',[Resevasi_GroFullController::class,'destroy'])->name('admin.transaksi.delete');
     
+    #transaction familly
+    #deposit
+    Route::get('/admin/Transaction/deposit-familly',[Resevasi_FamController::class, 'index'])->name('dp_familly');
+    Route::put('Transaction/{id}/Confirmations/dp', [Resevasi_FamController::class,'confirmation_dp'])->name('transaksi.confirmation_dp');
+    Route::get('Transaction/{id}/end',[Resevasi_FamController::class,'end_dp'])->name('admin.transaksi.dp_selesai');
+    Route::put('Trasaction/{id}',[Resevasi_FamController::class,'reject'])->name('admin.transaksi.dp_reject');
+    Route::delete('Trasaction/{id}',[Resevasi_FamController::class,'destroy'])->name('admin.transaksi.delete');
+    #Fullpayment
+    Route::get('/admin/Transaction/payment-familly',[Resevasi_FamFullController::class, 'index'])->name('payment_familly');
+    Route::put('Transaction/{id}/Confirmations/payment', [Resevasi_FamFullController::class,'confirmation_pay'])->name('transaksi.confirmation_pay');
+    Route::get('Transaction/{id}/payment',[Resevasi_FamFullController::class,'end_dp'])->name('admin.transaksi.pay_selesai');
+    Route::put('Trasaction/{id}/payment',[Resevasi_FamFullController::class,'reject'])->name('admin.transaksi.pay_reject');
+    Route::delete('Trasaction/{id}/payment',[Resevasi_FamFullController::class,'destroy'])->name('admin.transaksi.delete');
+    #search transaction
+    Route::get('Trasaction/search',[DashboardController::class, 'report'])->name('laporan');
+    Route::get('Trasaction/Report-Prewedding',[DashboardController::class,'prewedding'])->name('report.prewedding');
+    Route::get('Trasaction/Report-wedding',[DashboardController::class,'wedding'])->name('report.wedding');
+    Route::get('Trasaction/Report-Engagement',[DashboardController::class,'engagement'])->name('report.engagement');
+    Route::get('Trasaction/Report-Aqiqah',[DashboardController::class,'aqiqah'])->name('report.aqiqah');
+    Route::get('Trasaction/Report-Personal',[DashboardController::class,'personal'])->name('report.personal');
+    Route::get('Trasaction/Report-Group',[DashboardController::class,'group'])->name('report.group');
+    Route::get('Trasaction/Report-Familly',[DashboardController::class,'familly'])->name('report.familly');
 });
 
 #COSTUMER
@@ -235,6 +277,26 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/transaction/{id}/dp', [Personal_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_per');
     Route::put('/transaction/{id}/pay', [Personal_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_per');
     Route::delete('trasaction/{id}',[Personal_TransactionController::class,'destroy'])->name('transaction.destroy');
+    
+    #reservations_group
+    Route::get('/group/{group}',[Group_TransactionController::class, 'reservation'])->name('reservation_group');
+    Route::post('/group/store',[Group_TransactionController::class, 'store_gro'])->name('store_group');
+    #trasanctions_group
+    Route::get('/transaction-group', [Group_TransactionController::class, 'transactions_gro'])->name('transaction_group');
+    Route::get('/transaction/{id}', [Group_TransactionController::class, 'payment_dp'])->name('transaction_dp');
+    Route::put('/transaction/{id}/dp', [Group_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_gro');
+    Route::put('/transaction/{id}/pay', [Group_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_gro');
+    Route::delete('trasaction/{id}',[Group_TransactionController::class,'destroy'])->name('transaction.destroy');
+    
+    #reservations_familly
+    Route::get('/familly/{familly}',[Familly_TransactionController::class, 'reservation'])->name('reservation_familly');
+    Route::post('/familly/store',[Familly_TransactionController::class, 'store_fam'])->name('store_familly');
+    #trasanctions_familly
+    Route::get('/transaction-familly', [Familly_TransactionController::class, 'transactions_fam'])->name('transaction_familly');
+    Route::get('/transaction/{id}', [Familly_TransactionController::class, 'payment_dp'])->name('transaction_dp');
+    Route::put('/transaction/{id}/dp', [Familly_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_fam');
+    Route::put('/transaction/{id}/pay', [Familly_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_fam');
+    Route::delete('trasaction/{id}',[Familly_TransactionController::class,'destroy'])->name('transaction.destroy');
 
 
 
