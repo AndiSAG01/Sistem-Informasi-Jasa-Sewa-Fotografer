@@ -23,12 +23,13 @@
             <div class="col-4">
                 <div class="card p-2 rounded-2 d-flex flex-row flex-wrap" style="background-color: black">
                     <div class="position-relative shape-block">
-                        <img src="assets/images/shape1.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
-                        <i class="icon-book-open"></i>
+                        <img src="assets/images/shape2.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
+                        <i class="icon-award"></i>
                     </div>
                     <div class="ms-2">
-                        <h3 class="m-0 fw-semibold">250</h3>
-                        <h6 class="m-0 fw-light">Items</h6>
+                        <h5 class="m-0 fw-semibold mb-2">Prewedding</h5>
+                        <a href="{{ route('index_dp_prewedding') }}" class="btn btn-info btn-sm">Deposti</a>
+                        <a href="{{ route('index_payment_prewedding') }}" class="btn btn-success btn-sm">Fullpayment</a>
                     </div>
                 </div>
             </div>
@@ -36,23 +37,88 @@
                 <div class="card p-2 rounded-2 d-flex flex-row flex-wrap" style="background-color: black">
                     <div class="position-relative shape-block">
                         <img src="assets/images/shape2.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
-                        <i class="icon-shopping-cart"></i>
+                        <i class="icon-slack"></i>
                     </div>
                     <div class="ms-2">
-                        <h3 class="m-0 fw-semibold">490</h3>
-                        <h6 class="m-0 fw-light">Orders</h6>
+                        <h5 class="m-0 fw-semibold mb-2">Wedding</h5>
+                        <a href="{{ route('index_dp_wedding') }}" class="btn btn-info btn-sm">Deposti</a>
+                        <a href="{{ route('index_payment_wedding') }}" class="btn btn-success btn-sm">Fullpayment</a>
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="card p-2 rounded-2 d-flex flex-row flex-wrap" style="background-color: black">
                     <div class="position-relative shape-block">
-                        <img src="assets/images/shape3.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
-                        <i class="icon-shopping-bag"></i>
+                        <img src="assets/images/shape2.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
+                        <i class="icon-umbrella"></i>
                     </div>
                     <div class="ms-2">
-                        <h3 class="m-0 fw-semibold">630</h3>
-                        <h6 class="m-0 fw-light">Sales</h6>
+                        <h5 class="m-0 fw-semibold mb-2">Engagement</h5>
+                        <a href="{{ route('dp_engagement') }}" class="btn btn-info btn-sm">
+                            Deposit
+                        </a>
+                        <a href="{{ route('payment_engagement') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card p-2 rounded-2 d-flex flex-row flex-wrap" style="background-color: black">
+                    <div class="position-relative shape-block">
+                        <img src="assets/images/shape2.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
+                        <i class="icon-face_retouching_natural"></i>
+                    </div>
+                    <div class="ms-2">
+                        <h5 class="m-0 fw-semibold mb-2">Aqiqah</h5>
+                        
+                        <!-- Tombol Deposit dengan notifikasi jika ada pesanan baru yang menunggu konfirmasi -->
+                        <a href="{{ route('dp_aqiqah') }}" class="btn btn-info btn-sm">
+                            Deposit
+                        </a>
+                        <!-- Tombol Fullpayment dengan notifikasi jika ada pesanan baru yang menunggu konfirmasi -->
+                        <a href="{{ route('payment_aqiqah') }}" class="btn btn-success btn-sm">
+                            Fullpayment
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-4">
+                <div class="card p-2 rounded-2 d-flex flex-row flex-wrap" style="background-color: black">
+                    <div class="position-relative shape-block">
+                        <img src="assets/images/shape2.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
+                        <i class="icon-user"></i>
+                    </div>
+                    
+                    <div class="ms-2">
+                        <h5 class="m-0 fw-semibold mb-2">Personal Photo</h5>
+                        <a href="{{ route('dp_personal') }}" class="btn btn-info btn-sm">Deposti</a>
+                        <a href="{{ route('payment_personal') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card p-2 rounded-2 d-flex flex-row flex-wrap" style="background-color: black">
+                    <div class="position-relative shape-block">
+                        <img src="assets/images/shape2.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
+                        <i class="icon-group"></i>
+                    </div>
+                    <div class="ms-2">
+                        <h5 class="m-0 fw-semibold mb-2">Group Photo</h5>
+                        <a href="{{ route('dp_group') }}" class="btn btn-info btn-sm">Deposti</a>
+                        <a href="{{ route('payment_group') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card p-2 rounded-2 d-flex flex-row flex-wrap" style="background-color: black">
+                    <div class="position-relative shape-block">
+                        <img src="assets/images/shape2.png" class="img-fluid img-4x" alt="Bootstrap Themes" />
+                        <i class="icon-users"></i>
+                    </div>
+                    <div class="ms-2">
+                        <h5 class="m-0 fw-semibold mb-2">Familly Photo</h5>
+                        <a href="{{ route('dp_familly') }}" class="btn btn-info btn-sm">Deposti</a>
+                        <a href="{{ route('payment_familly') }}" class="btn btn-success btn-sm">Fullpayment</a>
                     </div>
                 </div>
             </div>

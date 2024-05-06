@@ -10,54 +10,64 @@
         <ul>
           <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
           <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
-          <li class="dropdown"><a href="#"><span>Price Guide</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="{{ route('prewedding') }}" class="{{ request()->routeIs('prewedding')?'active' : '' }}">Prewedding</a></li>
-                <li><a href="{{ route('wedding') }}" class="{{ request()->routeIs('wedding')? 'active' :' ' }}">Wedding</a></li>
-                <li><a href="{{ route('engagement') }}" class="{{ request()->routeIs('engagement')? 'active' :' ' }}">Engagement</a></li>
-              <li><a href="{{ route('aqiqah') }}" class="{{ request()->routeIs('aqiqah')? 'active' :' ' }}">Aqiqah</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Price Graduation</span> <i class="bi bi-chevron-down dropdown-indicators"></i></a>
-            <ul>
-                <li><a href="{{ route('personal') }}" class="{{ request()->routeIs('personal')? 'active' :' ' }}">Personal Photo</a></li>
-                <li><a href="{{ route('group') }}" class="{{ request()->routeIs('group')? 'active' :' ' }}">Group Photo</a></li>
-                <li><a href="{{ route('familly') }}" class="{{ request()->routeIs('familly')? 'active' :' ' }}">Family Photo</a></li>
-            </ul>
-          </li>
+      
+          <!-- Dropdown untuk Price Guide -->
           <li class="dropdown">
-            <a href="#"><span>Transaction</span> <i class="bi bi-chevron-down dropdown-indicators"></i></a>
+            <a href="#"><span>Price Guide</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{{ route('prewedding') }}" class="{{ request()->routeIs('prewedding') ? 'active' : '' }}">Prewedding</a></li>
+              <li><a href="{{ route('wedding') }}" class="{{ request()->routeIs('wedding') ? 'active' : '' }}">Wedding</a></li>
+              <li><a href="{{ route('engagement') }}" class="{{ request()->routeIs('engagement') ? 'active' : '' }}">Engagement</a></li>
+              <li><a href="{{ route('aqiqah') }}" class="{{ request()->routeIs('aqiqah') ? 'active' : '' }}">Aqiqah</a></li>
+            </ul>
+          </li>
+      
+          <!-- Dropdown untuk Price Graduation -->
+          <li class="dropdown">
+            <a href="#"><span>Price Graduation</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{{ route('personal') }}" class="{{ request()->routeIs('personal') ? 'active' : '' }}">Personal Photo</a></li>
+              <li><a href="{{ route('group') }}" class="{{ request()->routeIs('group') ? 'active' : '' }}">Group Photo</a></li>
+              <li><a href="{{ route('familly') }}" class="{{ request()->routeIs('familly') ? 'active' : '' }}">Family Photo</a></li>
+            </ul>
+          </li>
+      
+          <!-- Dropdown untuk Transactions -->
+          <li class="dropdown">
+            <a href="#"><span>Transaction</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <!-- Sub-menu Guide -->
               <li class="dropdown">
                 <a href="#">Guide</a>
                 <ul>
-                  <li><a href="{{ route('transaction_prewedding') }}">Prewedding</a></li> 
-                  <li><a href="{{ route('transaction_wedding') }}">Wedding</a></li>    
-                  <li><a href="">Engagement</a></li>  
-                  <li><a href="">Aqiqah</a></li>      
+                  <li><a href="{{ route('transaction_prewedding') }}">Prewedding</a></li>
+                  <li><a href="{{ route('transaction_wedding') }}">Wedding</a></li>
+                  <li><a href="{{ route('transaction_engagement') }}">Engagement</a></li>
+                  <li><a href="{{ route('transaction_aqiqah') }}">Aqiqah</a></li>
                 </ul>
               </li>
               <!-- Sub-menu Graduation -->
               <li class="dropdown">
                 <a href="#">Graduation</a>
                 <ul>
-                  <li><a href="">Personal Photo</a></li>
-                  <li><a href="">Group Photo</a></li>
-                  <li><a href="">Family Photo</a></li>
+                  <li><a href="{{ route('transaction_personal') }}">Personal Photo</a></li>
+                  <li><a href="{{ route('transaction_group') }}">Group Photo</a></li>
+                  <li><a href="{{ route('transaction_familly') }}">Family Photo</a></li>
                 </ul>
               </li>
             </ul>
-          </li>          
-          <li><a href="contact.html">History Transaction</a></li>
-          <form action="{{ route('logout') }}" method="post">
-          <li>
+          </li>
+      
+          <!-- Tombol Logout -->
+          <li style="margin:20px">
+            <form action="{{ route('logout') }}" method="post" style="display: inline-block; margin: 0; padding: 0;">
               @csrf
-              <button type="submit">Logout</button>
-            </li>
-          </form>
+              <button type="submit" class="bg-dark btn btn-dark btn-sm">Logout</button>
+            </form>
+          </li>
         </ul>
       </nav>
+      
 
       <div class="header-social-links">
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>

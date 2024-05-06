@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CostumerController extends Controller
@@ -32,6 +33,7 @@ class CostumerController extends Controller
     public function report()
     {
         $user = User::where('is_admin', 0)->get();
-        return view('admin.costumers.report', compact('user'));
+        $year = Carbon::now()->format(' M Y');
+        return view('admin.costumers.report', compact('user','year'));
     }
 }

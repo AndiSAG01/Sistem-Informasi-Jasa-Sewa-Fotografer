@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section('title')
+Laporan Costumer {{ $year }}
+@endsection
 @section('content')
 <div class="row mb-3">
     <div class="col-lg-12" >

@@ -78,4 +78,6 @@ class Engagement_TransactionController extends Controller
 
         return redirect()->back()->with('danger', 'Successfully Deleted');
     }
+
+    
 }

@@ -39,7 +39,7 @@
         <div class="card mb-4">
             <div class="card-body bg-black">
                 <div class="mb-2 d-flex align-items-end justify-content-between">
-                    <h5 class="card-title">Data Transaction Package PreWedding</h5>
+                    <h5 class="card-title">Data Transaction Package Wedding</h5>
                 </div>
                 <div class="table-responsive">
                     <table id="example" class="table table-striped table-bordered align-middle m-0">
@@ -130,16 +130,16 @@
                                         @if ($us->status_pay == 'selesai')
                                         <a class="btn btn-success mb-1" href="#" role="button">Selesai</a>
                                         
-                                        <form action="{{ route('admin.transaksi.delete', $us->id) }}" method="post">
+                                        <form action="{{ route('admin.transaksi.delete_wedding', $us->id) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger">Hapus</button>
                                         </form>
                                         
                                         @elseif($us->status_pay == 'telah di sewa')
-                                        <a href="{{ Route('admin.transaksi.pay_selesai', $us->id) }}" class="btn btn-success">Selesai</a>
+                                        <a href="{{ Route('admin.transaksi.pay_selesai_wedding', $us->id) }}" class="btn btn-success">Selesai</a>
                                         @elseif($us->status_pay == 'menunggu konfirmasi')
-                                        <form action="{{ Route('transaksi.confirmation_pay', $us->id) }}" method="post">
+                                        <form action="{{ Route('transaksi.confirmation_pay_wedding', $us->id) }}" method="post">
                                             @csrf
                                             @method('put')
             
@@ -147,14 +147,14 @@
                                         </form>
             
                                         @elseif ($us->status_pay == null )
-                                        <form action="{{ Route('admin.transaksi.pay_reject', $us->id) }}" method="post">
+                                        <form action="{{ Route('admin.transaksi.pay_reject_wedding', $us->id) }}" method="post">
                                             @csrf
                                             @method('put')
                                             <button type="submit" class="btn btn-danger">Tolak</button>
                                         </form>
                                         @elseif($us->status_pay == 'sewa anda di tolak')
                                       
-                                        <form action="{{ route('admin.transaksi.delete', $us->id) }}" method="post">
+                                        <form action="{{ route('admin.transaksi.delete_wedding', $us->id) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger">Hapus</button>

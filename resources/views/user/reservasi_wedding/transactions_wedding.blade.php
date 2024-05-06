@@ -127,7 +127,7 @@
                                                                         <span class="text-white p-3 btn bg-danger">Di
                                                                             Tolak</span>
                                                                     @elseif(!$us->status_dp)
-                                                                        <a href="{{ Route('transaction_dp', $us->id) }}"
+                                                                        <a href="{{ Route('transaction_dp_wed', $us->id) }}"
                                                                             class="btn btn-sm btn-warning">Upload
                                                                             Pembayaran</a>
                                                                         <form
@@ -189,7 +189,7 @@
                                                                         @elseif ($us->status_pay == 'selesai')
                                                                             <a class="btn btn-success" href="#" role="button">Foto Telah Selesai</a>
                                                                             @else
-                                                                            <a href="{{ Route('transaction_dp', $us->id) }}" class="btn btn-sm btn-warning">Upload Pembayaran</a>
+                                                                            <a href="{{ Route('transaction_dp_wed', $us->id) }}" class="btn btn-sm btn-warning">Upload Pembayaran</a>
                                                                         @endif
                                                                         @else
                                                                         <span

@@ -28,7 +28,7 @@
                     <div class="mb-4">
                         <div class="card-body text-white" style="background-color: black">
                             <div class="mb-2 d-flex align-items-end justify-content-between">
-                                <h5 class="card-title">Data Transaction Wedding Photo</h5>
+                                <h5 class="card-title">Data Transaction Engagement Photo</h5>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered align-middle m-0">
@@ -127,7 +127,7 @@
                                                                         <span class="text-white p-3 btn bg-danger">Di
                                                                             Tolak</span>
                                                                     @elseif(!$us->status_dp)
-                                                                        <a href="{{ Route('transaction_dp', $us->id) }}"
+                                                                        <a href="{{ Route('transaction_dp_eng', $us->id) }}"
                                                                             class="btn btn-sm btn-warning">Upload
                                                                             Pembayaran</a>
                                                                         <form
@@ -189,7 +189,7 @@
                                                                         @elseif ($us->status_pay == 'selesai')
                                                                             <a class="btn btn-success" href="#" role="button">Foto Telah Selesai</a>
                                                                             @else
-                                                                            <a href="{{ Route('transaction_dp', $us->id) }}" class="btn btn-sm btn-warning">Upload Pembayaran</a>
+                                                                            <a href="{{ Route('transaction_dp_eng', $us->id) }}" class="btn btn-sm btn-warning">Upload Pembayaran</a>
                                                                         @endif
                                                                         @else
                                                                         <span

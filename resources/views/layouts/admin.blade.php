@@ -98,7 +98,7 @@
                     <!-- App brand sm start -->
                     <div class="app-brand-sm d-md-none d-sm-block">
                         <a href="index.html">
-                            <img src="/assets/images/logo-sm.svg" class="logo" alt="Bootstrap Gallery">
+                            <img src="/asset/img/logo/logo.jpg" class="logo" alt="Bootstrap Gallery">
                         </a>
                     </div>
                     <!-- App brand sm end -->
@@ -107,68 +107,14 @@
 
                     <!-- App header actions start -->
                     <div class="header-actions">
-                        <div class="dropdown d-sm-flex d-none">
-                            <a class="dropdown-toggle d-flex p-3 position-relative" href="#!" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="icon-shopping-cart fs-4 lh-1"></i>
-                                <span class="count rounded-circle bg-danger">9</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-md shadow-sm">
-                                <h5 class="fw-semibold px-3 py-2 m-0">Orders</h5>
-                                <a href="javascript:void(0)" class="dropdown-item">
-                                    <div class="d-flex align-items-start py-2">
-                                        <div class="p-3 bg-danger border border-danger rounded-circle me-3">
-                                            MS
-                                        </div>
-                                        <div class="m-0">
-                                            <h6 class="mb-1 fw-semibold">Moory Sammy</h6>
-                                            <p class="mb-1">Ordered an iPhone.</p>
-                                            <p class="small m-0 opacity-50">3 Mins Ago</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="javascript:void(0)" class="dropdown-item">
-                                    <div class="d-flex align-items-start py-2">
-                                        <div class="p-3 bg-primary border border-primary rounded-circle me-3">
-                                            KY
-                                        </div>
-                                        <div class="m-0">
-                                            <h6 class="mb-1 fw-semibold">Kyle Yomaha</h6>
-                                            <p class="mb-1">Purchased a MacBook.</p>
-                                            <p class="small m-0 opacity-50">5 Mins Ago</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="javascript:void(0)" class="dropdown-item">
-                                    <div class="d-flex align-items-start py-2">
-                                        <div class="p-3 bg-success border border-success rounded-circle me-3">
-                                            SB
-                                        </div>
-                                        <div class="m-0">
-                                            <h6 class="mb-1 fw-semibold">Srinu Basava</h6>
-                                            <p class="mb-1">Purchased a NotePad.</p>
-                                            <p class="small m-0 opacity-50">7 Mins Ago</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="d-grid p-3 border-top">
-                                    <a href="javascript:void(0)" class="btn btn-outline-primary">View all</a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="dropdown ms-2">
                             <a class="dropdown-toggle d-flex align-items-center user-settings" href="#!"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span>Fuzail Malik</span>
-                                <img src="/assets/images/user3.png" class="img-3x m-2 me-0 rounded-3"
+                                <span>{{ Auth::user()->name}}</span>
+                                <img src="/assets/images/profil.jpg" class="img-3x m-2 me-0 rounded-3"
                                     alt="Admin Templates" />
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-sm shadow-sm gap-3">
-                                <a class="dropdown-item d-flex align-items-center py-2" href="profile.html"><i
-                                        class="icon-gitlab fs-4 me-3"></i>User Profile</a>
-                                <a class="dropdown-item d-flex align-items-center py-2"
-                                    href="account-settings.html"><i class="icon-settings fs-4 me-3"></i>Account
-                                    Settings</a>
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
                                     <button class="dropdown-item d-flex align-items-center py-2" type="submit"><i
@@ -286,6 +232,9 @@
 	   }
    });
    </script>
+
+   
+
 </body>
 
 </html>

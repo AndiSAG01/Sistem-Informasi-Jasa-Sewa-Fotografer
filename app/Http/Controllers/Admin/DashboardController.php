@@ -13,15 +13,62 @@ use App\Models\Resevasi_wed;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $tables = [
+            'resevasi_pres',
+            'resevasi_weds',
+            'resevasi_engs',
+            'resevasi_aqis',
+            'resevasi__pers',
+            'resevasi__gros',
+            'resevasi__fams',
+        ];
+    
+        // Inisialisasi array untuk menyimpan informasi pesanan belum dikonfirmasi
+        $unconfirmedOrders = [];
+    
+        foreach ($tables as $table) {
+            try {
+                // Mendapatkan jumlah entri dengan status_dp "menunggu konfirmasi"
+                $status_dp_count = DB::table($table)
+                                     ->where('status_dp', 'menunggu konfirmasi')
+                                     ->count();
+    
+                // Mendapatkan jumlah entri dengan status_pay "menunggu konfirmasi"
+                $status_pay_count = DB::table($table)
+                                      ->where('status_pay', 'menunggu konfirmasi')
+                                      ->count();
+    
+                // Menyimpan hasil ke array
+                $unconfirmedOrders[$table] = [
+                    'dp' => $status_dp_count,
+                    'pay' => $status_pay_count
+                ];
+            } catch (Exception $e) {
+                // Menangani kesalahan yang mungkin terjadi saat mengakses database
+                report($e); // Melaporkan kesalahan, bisa ditindaklanjuti dengan log
+                $unconfirmedOrders[$table] = [
+                    'dp' => 0,
+                    'pay' => 0
+                ]; // Set default jika ada kesalahan
+            }
+        }
+    
+        // Mengembalikan data ke tampilan
+        return view('admin.dashboard', [
+            'unconfirmedOrders' => $unconfirmedOrders,
+        ]);
     }
+    
+
 
     public function report()
     {
@@ -70,7 +117,4 @@ class DashboardController extends Controller
     $resevasi = Resevasi_Fam::all();
     return view('admin.report.report_familly', compact('resevasi','year'));
    }
-
-    
-
 }
