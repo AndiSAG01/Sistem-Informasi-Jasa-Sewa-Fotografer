@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
 <div class="row mb-3">
     <div class="col-lg-12">
         <nav aria-label="breadcrumb">
@@ -28,8 +29,16 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Prewedding</h5>
-                        <a href="{{ route('index_dp_prewedding') }}" class="btn btn-info btn-sm">Deposti</a>
-                        <a href="{{ route('index_payment_prewedding') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                        <a href="{{ route('index_dp_prewedding') }}" class="btn btn-info btn-sm">Deposti
+                            @if ($confir_dp_pre > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_pre }} NEW ORDER</i>
+                            @endif
+                        </a>
+                        <a href="{{ route('index_payment_prewedding') }}" class="btn btn-success btn-sm">Fullpayment
+                            @if ($confir_pay_pre > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_pay_pre }} NEW ORDER</i>
+                            @endif
+                        </a>
                     </div>
                 </div>
             </div>
@@ -41,8 +50,16 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Wedding</h5>
-                        <a href="{{ route('index_dp_wedding') }}" class="btn btn-info btn-sm">Deposti</a>
-                        <a href="{{ route('index_payment_wedding') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                        <a href="{{ route('index_dp_wedding') }}" class="btn btn-info btn-sm">Deposti
+                            @if ($confir_dp_wed > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_wed }} NEW ORDER</i>
+                            @endif
+                        </a>
+                        <a href="{{ route('index_payment_wedding') }}" class="btn btn-success btn-sm">Fullpayment
+                            @if ($confir_pay_wed > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_pay_wed }} NEW ORDER</i>
+                            @endif
+                        </a>
                     </div>
                 </div>
             </div>
@@ -56,8 +73,15 @@
                         <h5 class="m-0 fw-semibold mb-2">Engagement</h5>
                         <a href="{{ route('dp_engagement') }}" class="btn btn-info btn-sm">
                             Deposit
+                            @if ($confir_dp_eng > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_eng }} NEW ORDER</i>
+                            @endif
                         </a>
-                        <a href="{{ route('payment_engagement') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                        <a href="{{ route('payment_engagement') }}" class="btn btn-success btn-sm">Fullpayment
+                            @if ($confir_pay_eng > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_pay_eng }} NEW ORDER</i>
+                            @endif
+                        </a>
                     </div>
                 </div>
             </div>
@@ -69,14 +93,17 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Aqiqah</h5>
-                        
-                        <!-- Tombol Deposit dengan notifikasi jika ada pesanan baru yang menunggu konfirmasi -->
                         <a href="{{ route('dp_aqiqah') }}" class="btn btn-info btn-sm">
                             Deposit
+                            @if ($confir_dp_aqi > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_aqi }} NEW ORDER</i>
+                            @endif
                         </a>
-                        <!-- Tombol Fullpayment dengan notifikasi jika ada pesanan baru yang menunggu konfirmasi -->
                         <a href="{{ route('payment_aqiqah') }}" class="btn btn-success btn-sm">
                             Fullpayment
+                            @if ($confir_pay_aqi > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_pay_aqi }} NEW ORDER</i>
+                            @endif
                         </a>
                     </div>
                 </div>
@@ -91,8 +118,16 @@
                     
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Personal Photo</h5>
-                        <a href="{{ route('dp_personal') }}" class="btn btn-info btn-sm">Deposti</a>
-                        <a href="{{ route('payment_personal') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                        <a href="{{ route('dp_personal') }}" class="btn btn-info btn-sm">Deposti
+                            @if ($confir_dp_per > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_per }} NEW ORDER</i>
+                            @endif
+                        </a>
+                        <a href="{{ route('payment_personal') }}" class="btn btn-success btn-sm">Fullpayment
+                            @if ($confir_pay_per > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_pay_per }} NEW ORDER</i>
+                            @endif
+                        </a>
                     </div>
                 </div>
             </div>
@@ -104,8 +139,16 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Group Photo</h5>
-                        <a href="{{ route('dp_group') }}" class="btn btn-info btn-sm">Deposti</a>
-                        <a href="{{ route('payment_group') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                        <a href="{{ route('dp_group') }}" class="btn btn-info btn-sm">Deposti
+                         @if ($confir_dp_gro > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_gro }} NEW ORDER</i>
+                            @endif
+                        </a>
+                        <a href="{{ route('payment_group') }}" class="btn btn-success btn-sm">Fullpayment
+                         @if ($confir_pay_gro > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_pay_gro }} NEW ORDER</i>
+                            @endif
+                        </a>
                     </div>
                 </div>
             </div>
@@ -117,8 +160,16 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Familly Photo</h5>
-                        <a href="{{ route('dp_familly') }}" class="btn btn-info btn-sm">Deposti</a>
-                        <a href="{{ route('payment_familly') }}" class="btn btn-success btn-sm">Fullpayment</a>
+                        <a href="{{ route('dp_familly') }}" class="btn btn-info btn-sm">Deposti
+                         @if ($confir_dp_fam > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_fam }} NEW ORDER</i>
+                            @endif
+                        </a>
+                        <a href="{{ route('payment_familly') }}" class="btn btn-success btn-sm">Fullpayment
+                         @if ($confir_pay_fam > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_pay_fam }} NEW ORDER</i>
+                            @endif
+                        </a>
                     </div>
                 </div>
             </div>

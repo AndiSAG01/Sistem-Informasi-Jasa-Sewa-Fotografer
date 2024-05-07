@@ -70,8 +70,8 @@
       
 
       <div class="header-social-links">
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-whatsapp"></i></i></a>
+        <a href="https://www.instagram.com/setapak.photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://wa.me/6282286993274" class="linkedin"><i class="bi bi-whatsapp"></i></i></a>
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>

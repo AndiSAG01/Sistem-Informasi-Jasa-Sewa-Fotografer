@@ -67,9 +67,20 @@
                     <a href="#!">
                         <span class="menu-text">Prewedding</span>
                     </a>
+                    @php
+                        $order_dp = DB::table('resevasi_pres')
+                        ->join('users', 'user_id', '=', 'resevasi_pres.user_id')
+                        ->select('resevasi_pres.*', 'users.name')
+                        ->limit(10)->get();
+                        $confir_dp = $order_dp->where('status_dp','menunggu konfirmasi')->count();
+                    @endphp
                     <!-- Prewedding Sub-menu -->
                     <ul class="treeview-menu">
-                        <li><a href="{{ route('index_dp_prewedding') }}">DP</a></li> <!-- Deposit Payment -->
+                        <li><a href="{{ route('index_dp_prewedding') }}">DP
+                            @if ($confir_dp > 0)
+                            <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp }}</i>
+                            @endif</a>
+                        </li> <!-- Deposit Payment -->
                         <li><a href="{{ route('index_payment_prewedding') }}">Fullpayment</a></li> <!-- Full Payment -->
                     </ul>
                 </li>
