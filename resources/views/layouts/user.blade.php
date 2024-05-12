@@ -90,11 +90,20 @@
   <script src="/asset/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/asset/vendor/aos/aos.js"></script>
   <script src="/asset/vendor/php-email-form/validate.js"></script>
+  @include('layouts.date')
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="/asset/js/main.js"></script>
+  <script>
+    function checkDateInput() {
+        var dateInput = document.getElementById('date').value;
+        if (dateInput !== '') {
+            document.getElementById('date').disabled = true;
+        }
+    }
+</script>
 
 </body>
 

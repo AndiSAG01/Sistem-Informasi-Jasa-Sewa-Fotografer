@@ -75,7 +75,7 @@
                                         Phone Number
                                     </div>
                                 </th>
-                                <th width="150px">
+                                <th style="width: 400px">
                                     <div class="d-flex align-items-center">
                                         <span class="icon-settings me-2 fs-4"></span>
                                         Action

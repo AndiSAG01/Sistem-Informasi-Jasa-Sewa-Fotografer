@@ -6,6 +6,7 @@ use App\Models\Basic;
 use App\Models\PreWedding;
 use App\Models\Resevasi_Pre;
 use App\Models\User;
+use App\Rules\UniqueReservationDate;
 use Illuminate\Http\Request;
 
 class Prewedding_TransactionController extends Controller
@@ -30,6 +31,9 @@ class Prewedding_TransactionController extends Controller
 
     public function store_pre(Request $request)
     {
+        $request->validate([
+            'date' => ['required', new UniqueReservationDate],
+        ]);
         Resevasi_Pre::create([
             'prewedding_id' => $request->prewedding_id,
             'user_id' => $request->user_id,

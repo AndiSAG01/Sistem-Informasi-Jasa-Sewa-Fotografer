@@ -46,7 +46,10 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputPassword4" class="form-label">Tanggal <span class="text-danger">*</span></label>
-                                    <input type="date" name="date" class="form-control" id="inputPassword4" />
+                                    <input type="date" name="date" class="form-control" id="inputPassword4" onchange="checkDateInput()"/>
+                                    @error('date')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 </div>
                                 <div class="col-md-12">
                                     <label for="" class="form-label">Address <span class="text-danger">*</span></label>

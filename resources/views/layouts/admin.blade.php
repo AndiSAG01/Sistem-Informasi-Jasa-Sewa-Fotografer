@@ -221,7 +221,7 @@
 	<script>
 		new DataTable('#example');
 	</script>
-
+    @include('layouts.date')
 	<script>
    
    new DataTable('#myTable', {
