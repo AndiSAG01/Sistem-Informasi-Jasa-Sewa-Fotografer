@@ -236,7 +236,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/transaction/{id}/prewedding', [Prewedding_TransactionController::class, 'payment_dp'])->name('transaction_dp_pre');
     Route::put('/transaction/{id}/dp-prewedding', [Prewedding_TransactionController::class, 'store_dp'])->name('transaction.upload_dp');
     Route::put('/transaction/{id}/pay-prewedding', [Prewedding_TransactionController::class, 'store_pay'])->name('transaction.upload_pay');
-    Route::delete('trasaction/{id}/delete',[Prewedding_TransactionController::class,'destroy'])->name('transaction.destroy');
+    Route::delete('/trasaction/{id}/delete-prewedding',[Prewedding_TransactionController::class,'destroy'])->name('prewedding.transaction.destroy');
 
     #reservations_wedding
     Route::get('/wedding/{wedding}',[Wedding_TransactionController::class, 'reservation'])->name('reservation_wedding');
@@ -246,7 +246,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/transaction/{id}/wedding', [Wedding_TransactionController::class, 'payment_dp'])->name('transaction_dp_wed');
     Route::put('/transaction/{id}/dp-wedding', [Wedding_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_wed');
     Route::put('/transaction/{id}/pay-wedding', [Wedding_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_wed');
-    Route::delete('trasaction/{id}/delete',[Wedding_TransactionController::class,'destroy'])->name('transaction.destroy');
+    Route::delete('trasaction/{id}/delete-wedding',[Wedding_TransactionController::class,'destroy'])->name('wedding.transaction.destroy');
     
     #reservations_engagement
     Route::get('/engagement/{engagement}',[Engagement_TransactionController::class, 'reservation'])->name('reservation_engagement');
@@ -256,7 +256,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/transaction/{id}/engagement', [Engagement_TransactionController::class, 'payment_dp'])->name('transaction_dp_eng');
     Route::put('/transaction/{id}/dp-engagement', [Engagement_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_eng');
     Route::put('/transaction/{id}/pay-engagement', [Engagement_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_eng');
-    Route::delete('trasaction/{id}/delete',[Engagement_TransactionController::class,'destroy'])->name('transaction.destroy');
+    Route::delete('trasaction/{id}/delete-engagement',[Engagement_TransactionController::class,'destroy'])->name('engagement.transaction.destroy');
    
     #reservations_aqiqah
     Route::get('/aqiqah/{aqiqah}',[Aqiqah_TransactionController::class, 'reservation'])->name('reservation_aqiqah');
@@ -266,7 +266,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/transaction/{id}/aqiqah', [Aqiqah_TransactionController::class, 'payment_dp'])->name('transaction_dp_aqi');
     Route::put('/transaction/{id}/dp-aqiqah', [Aqiqah_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_aqi');
     Route::put('/transaction/{id}/pay-aqiqah', [Aqiqah_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_aqi');
-    Route::delete('trasaction/{id}',[Aqiqah_TransactionController::class,'destroy'])->name('transaction.destroy');
+    Route::delete('trasaction/{id}/delete-aqiqah',[Aqiqah_TransactionController::class,'destroy'])->name('aqiqah.transaction.destroy');
    
     #reservations_personal
     Route::get('/personal/{personal}',[Personal_TransactionController::class, 'reservation'])->name('reservation_personal');
@@ -276,7 +276,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/transaction/{id}/personal', [Personal_TransactionController::class, 'payment_dp'])->name('transaction_dp_per');
     Route::put('/transaction/{id}/dp-personal', [Personal_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_per');
     Route::put('/transaction/{id}/pay-personal', [Personal_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_per');
-    Route::delete('trasaction/{id}',[Personal_TransactionController::class,'destroy'])->name('transaction.destroy');
+    Route::delete('trasaction/{id}/delete-personal',[Personal_TransactionController::class,'destroy'])->name('personal.transaction.destroy');
     
     #reservations_group
     Route::get('/group/{group}',[Group_TransactionController::class, 'reservation'])->name('reservation_group');
@@ -286,7 +286,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/transaction/{id}/group', [Group_TransactionController::class, 'payment_dp'])->name('transaction_dp_gro');
     Route::put('/transaction/{id}/dp-group', [Group_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_gro');
     Route::put('/transaction/{id}/pay-group', [Group_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_gro');
-    Route::delete('trasaction/{id}',[Group_TransactionController::class,'destroy'])->name('transaction.destroy');
+    Route::delete('trasaction/{id}/delete-group',[Group_TransactionController::class,'destroy'])->name('group.transaction.destroy');
     
     #reservations_familly
     Route::get('/familly/{familly}',[Familly_TransactionController::class, 'reservation'])->name('reservation_familly');
@@ -296,9 +296,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/transaction/{id}/familly', [Familly_TransactionController::class, 'payment_dp'])->name('transaction_dp_fam');
     Route::put('/transaction/{id}/dp-familly', [Familly_TransactionController::class, 'store_dp'])->name('transaction.upload_dp_fam');
     Route::put('/transaction/{id}/pay-familly', [Familly_TransactionController::class, 'store_pay'])->name('transaction.upload_pay_fam');
-    Route::delete('trasaction/{id}',[Familly_TransactionController::class,'destroy'])->name('transaction.destroy');
-
-
+    Route::delete('trasaction/{id}/delete-familly',[Familly_TransactionController::class,'destroy'])->name('familly.transaction.destroy');
 
 });
 

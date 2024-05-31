@@ -119,7 +119,8 @@
                                                                             role="button">Selesai</a>
                                                                     @elseif($us->status_dp == 'telah di sewa')
                                                                         <a class="btn btn-success" href="#"
-                                                                            role="button">Anda Berhasil Melakukan Resevasi</a>
+                                                                            role="button">Anda Berhasil Melakukan
+                                                                            Resevasi</a>
                                                                     @elseif($us->status_dp == 'menunggu konfirmasi')
                                                                         <a class="btn btn-secondary" href="#"
                                                                             role="button">Menunggu Konfirmasi</a>
@@ -131,8 +132,10 @@
                                                                             class="btn btn-sm btn-warning">Upload
                                                                             Pembayaran</a>
                                                                         <form
-                                                                            onclick="return confirm('Anda yakin data dihapus?');"
-                                                                            class="d-inline" action="{{ route('transaction.destroy', $us->id) }}" method="post">
+                                                                            onclick="return confirm('Anda yakin data di batalkan?');"
+                                                                            class="d-inline"
+                                                                            action="{{ route ('prewedding.transaction.destroy', $us->id) }}"
+                                                                            method="post">
                                                                             @csrf
                                                                             @method('delete')
                                                                             <button type="submit"
@@ -181,23 +184,30 @@
                                                                     @if ($us->status_dp == 'selesai')
                                                                         <!-- Cek status -->
                                                                         @if ($us->status_pay == 'menunggu konfirmasi')
-                                                                            <a class="btn btn-secondary" href="#" role="button">Menunggu Konfirmasi</a>
+                                                                            <a class="btn btn-secondary" href="#"
+                                                                                role="button">Menunggu Konfirmasi</a>
                                                                         @elseif($us->status_pay == 'telah di sewa')
-                                                                            <a class="btn btn-info" href="#" role="button">Foto Sedang Di Proses</a>
+                                                                            <a class="btn btn-info" href="#"
+                                                                                role="button">Foto Sedang Di Proses</a>
                                                                         @elseif($us->status_pay == 'sewa anda di tolak')
-                                                                            <span class="text-white p-3 btn btn-danger">Di Tolak</span>
+                                                                            <span class="text-white p-3 btn btn-danger">Di
+                                                                                Tolak</span>
                                                                         @elseif ($us->status_pay == 'selesai')
-                                                                            <a class="btn btn-success" href="#" role="button">Foto Telah Selesai</a>
-                                                                            @else
-                                                                            <a href="{{ Route('transaction_dp_pre', $us->id) }}" class="btn btn-sm btn-warning">Upload Pembayaran</a>
-                                                                        @endif
+                                                                            <a class="btn btn-success" href="#"
+                                                                                role="button">Foto Telah Selesai</a>
                                                                         @else
+                                                                            <a href="{{ Route('transaction_dp_pre', $us->id) }}"
+                                                                                class="btn btn-sm btn-warning">Upload
+                                                                                Pembayaran</a>
+                                                                        @endif
+                                                                    @else
                                                                         <span
-                                                                        class="text-white p-3 badge bg-warning">Upload Fullpayment Di upload ketika sudah selesai acara</span>
-                                                                    <!-- Pesan jika DP belum diunggah -->
-        
+                                                                            class="text-white p-3 badge bg-warning">Upload
+                                                                            Fullpayment Di upload ketika sudah selesai
+                                                                            acara</span>
+                                                                        <!-- Pesan jika DP belum diunggah -->
                                                                     @endif
-                                                                </td>                                                                
+                                                                </td>
                                                             </tr>
                                                         @endforeach
                                                     </tbody>

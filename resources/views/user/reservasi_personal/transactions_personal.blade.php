@@ -132,7 +132,7 @@
                                                                             Pembayaran</a>
                                                                         <form
                                                                             onclick="return confirm('Anda yakin data dihapus?');"
-                                                                            class="d-inline" action="{{ route('transaction.destroy', $us->id) }}" method="post">
+                                                                            class="d-inline" action="{{ route('personal.transaction.destroy', $us->id) }}" method="post">
                                                                             @csrf
                                                                             @method('delete')
                                                                             <button type="submit"
