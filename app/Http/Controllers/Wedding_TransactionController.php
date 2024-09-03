@@ -22,9 +22,7 @@ class Wedding_TransactionController extends Controller
     public function reservation($id)
     {
         $wedding = Wedding::findorFail($id);
-        $user = User::findorFail($id);
-        $basic = Basic::findorFail($id);
-        return view('user.reservasi_wedding.reservation_wedding', compact('wedding', 'basic', 'user'));
+        return view('user.reservasi_wedding.reservation_wedding', compact('wedding'));
     }
 
     public function store_wed(Request $request)

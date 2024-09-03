@@ -22,9 +22,7 @@ class Group_TransactionController extends Controller
     public function reservation($id)
     {
         $group = Group::findorFail($id);
-        $user = User::findorFail($id);
-        $basic = Basic::findorFail($id);
-        return view('user.reservasi_group.reservation_group', compact('group', 'basic', 'user'));
+        return view('user.reservasi_group.reservation_group', compact('group'));
     }
 
     public function store_gro(Request $request)

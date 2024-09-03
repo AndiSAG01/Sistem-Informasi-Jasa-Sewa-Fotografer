@@ -24,9 +24,7 @@ class Prewedding_TransactionController extends Controller
     public function reservation($id)
     {
         $prewedding = PreWedding::findorFail($id);
-        $user = User::findorFail($id);
-        $basic = Basic::findorFail($id);
-        return view('user.reservasi_prewedding.reservation_prewedding', compact('prewedding', 'basic', 'user'));
+        return view('user.reservasi_prewedding.reservation_prewedding', compact('prewedding'));
     }
 
     public function store_pre(Request $request)

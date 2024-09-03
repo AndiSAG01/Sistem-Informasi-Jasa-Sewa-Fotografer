@@ -35,25 +35,33 @@
                         </div>
                         <div class="card-body">
                             <!-- Row start -->
-                            <form class="row g-3" action="{{ route('store_engagement') }}" method="post" enctype="multipart/form-data">
+                            <form class="row g-3" action="{{ route('store_engagement') }}" method="post"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="engagement_id" value="{{ $engagement->id }}">
                                 <input type="hidden" name="user_id" value="{{ Auth()->user()->id }}">
-                                <input type="hidden" name="basic_id" value="{{ $basic->id }}">
+                                <input type="hidden" name="basic_id" value="{{ $engagement->id }}">
                                 <div class="col-md-6">
-                                    <label for="inputEmail4" class="form-label">Name <span class="text-danger">*</span></label>
+                                    <label for="inputEmail4" class="form-label">Name <span
+                                            class="text-danger">*</span></label>
                                     <input type="text" name="name" class="form-control" id="inputEmail4" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Tanggal <span class="text-danger">*</span></label>
+                                    <label for="inputPassword4" class="form-label">Tanggal <span
+                                            class="text-danger">*</span></label>
                                     <input type="date" name="date" class="form-control" id="inputPassword4" />
+                                    @error('date')
+                                        <p class="text-danger" style="font-size: 90%">Tanggal Tidak Boleh Kurang Dari Hari Ini</p>
+                                    @enderror
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="" class="form-label">Address <span class="text-danger">*</span></label>
+                                    <label for="" class="form-label">Address <span
+                                            class="text-danger">*</span></label>
                                     <input type="text" name="address" class="form-control">
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="selected" class="form-label">Selected Guide <span class="text-danger">*</span> </label>
+                                    <label for="selected" class="form-label">Selected Guide <span
+                                            class="text-danger">*</span> </label>
                                     <span class="text-danger">Silahkan Pilih Sesuai Paket Yang Anda Ambil</span>
                                     <select name="selected" class="form-control">
                                         <option value="">==Selected Guide==</option>

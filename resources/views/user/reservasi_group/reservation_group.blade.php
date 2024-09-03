@@ -39,7 +39,7 @@
                                 @csrf
                                 <input type="hidden" name="group_id" value="{{ $group->id }}">
                                 <input type="hidden" name="user_id" value="{{ Auth()->user()->id }}">
-                                <input type="hidden" name="basic_id" value="{{ $basic->id }}">
+                                <input type="hidden" name="basic_id" value="{{ $group->id }}">
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Name <span class="text-danger">*</span></label>
                                     <input type="text" name="name" class="form-control" id="inputEmail4" />

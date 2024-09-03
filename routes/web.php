@@ -51,6 +51,7 @@ Route::post('/logout', [HomeController::class,'logout'])->name('logout');
 Route::middleware(['auth','is_admin'])->group(function(){
     Route::get('/admin',[DashboardController::class, 'index'])->name('dashboard');
     Route::get('resevations/check-pending',[DashboardController::class, 'checkPending'])->name('check_pending_reservations');
+    Route::get('/events',[DashboardController::class, 'getEvents'])->name('events');
     #costumers
     Route::get('/admin/costumers',[CostumerController::class, 'index'])->name('costumers');
     Route::get('/admin/costumers/{id}',[CostumerController::class, 'detail'])->name('costumers.detail');
@@ -229,7 +230,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/familly', [HomeController::class, 'familly'])->name('familly');
 
     #reservations_prewedding
-    Route::get('/prewedding/{prewedding}',[Prewedding_TransactionController::class, 'reservation'])->name('reservation_prewedding');
+    Route::get('/prewedding/{id}',[Prewedding_TransactionController::class, 'reservation'])->name('reservation_prewedding');
     Route::post('/prewedding/store',[Prewedding_TransactionController::class, 'store_pre'])->name('store_prewedding');
     #trasanctions_prewedding
     Route::get('/transaction-prewedding', [Prewedding_TransactionController::class, 'transactions'])->name('transaction_prewedding');
@@ -239,7 +240,7 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('/trasaction/{id}/delete-prewedding',[Prewedding_TransactionController::class,'destroy'])->name('prewedding.transaction.destroy');
 
     #reservations_wedding
-    Route::get('/wedding/{wedding}',[Wedding_TransactionController::class, 'reservation'])->name('reservation_wedding');
+    Route::get('/wedding/{id}',[Wedding_TransactionController::class, 'reservation'])->name('reservation_wedding');
     Route::post('/wedding/store',[Wedding_TransactionController::class, 'store_wed'])->name('store_wedding');
     #trasanctions_wedding
     Route::get('/transaction-wedding', [Wedding_TransactionController::class, 'transactions_wed'])->name('transaction_wedding');
@@ -249,7 +250,7 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('trasaction/{id}/delete-wedding',[Wedding_TransactionController::class,'destroy'])->name('wedding.transaction.destroy');
     
     #reservations_engagement
-    Route::get('/engagement/{engagement}',[Engagement_TransactionController::class, 'reservation'])->name('reservation_engagement');
+    Route::get('/engagement/{id}',[Engagement_TransactionController::class, 'reservation'])->name('reservation_engagement');
     Route::post('/engagement/store',[Engagement_TransactionController::class, 'store_eng'])->name('store_engagement');
     #trasanctions_engagement
     Route::get('/transaction-engagement', [Engagement_TransactionController::class, 'transactions_eng'])->name('transaction_engagement');
@@ -259,7 +260,7 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('trasaction/{id}/delete-engagement',[Engagement_TransactionController::class,'destroy'])->name('engagement.transaction.destroy');
    
     #reservations_aqiqah
-    Route::get('/aqiqah/{aqiqah}',[Aqiqah_TransactionController::class, 'reservation'])->name('reservation_aqiqah');
+    Route::get('/aqiqah/{id}',[Aqiqah_TransactionController::class, 'reservation'])->name('reservation_aqiqah');
     Route::post('/aqiqah/store',[Aqiqah_TransactionController::class, 'store_aqi'])->name('store_aqiqah');
     #trasanctions_aqiqah
     Route::get('/transaction-aqiqah', [Aqiqah_TransactionController::class, 'transactions_aqi'])->name('transaction_aqiqah');
@@ -269,7 +270,7 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('trasaction/{id}/delete-aqiqah',[Aqiqah_TransactionController::class,'destroy'])->name('aqiqah.transaction.destroy');
    
     #reservations_personal
-    Route::get('/personal/{personal}',[Personal_TransactionController::class, 'reservation'])->name('reservation_personal');
+    Route::get('/personal/{id}',[Personal_TransactionController::class, 'reservation'])->name('reservation_personal');
     Route::post('/personal/store',[Personal_TransactionController::class, 'store_per'])->name('store_personal');
     #trasanctions_personal
     Route::get('/transaction-personal', [Personal_TransactionController::class, 'transactions_per'])->name('transaction_personal');
@@ -279,7 +280,7 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('trasaction/{id}/delete-personal',[Personal_TransactionController::class,'destroy'])->name('personal.transaction.destroy');
     
     #reservations_group
-    Route::get('/group/{group}',[Group_TransactionController::class, 'reservation'])->name('reservation_group');
+    Route::get('/group/{id}',[Group_TransactionController::class, 'reservation'])->name('reservation_group');
     Route::post('/group/store',[Group_TransactionController::class, 'store_gro'])->name('store_group');
     #trasanctions_group
     Route::get('/transaction-group', [Group_TransactionController::class, 'transactions_gro'])->name('transaction_group');
@@ -289,7 +290,7 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('trasaction/{id}/delete-group',[Group_TransactionController::class,'destroy'])->name('group.transaction.destroy');
     
     #reservations_familly
-    Route::get('/familly/{familly}',[Familly_TransactionController::class, 'reservation'])->name('reservation_familly');
+    Route::get('/familly/{id}',[Familly_TransactionController::class, 'reservation'])->name('reservation_familly');
     Route::post('/familly/store',[Familly_TransactionController::class, 'store_fam'])->name('store_familly');
     #trasanctions_familly
     Route::get('/transaction-familly', [Familly_TransactionController::class, 'transactions_fam'])->name('transaction_familly');

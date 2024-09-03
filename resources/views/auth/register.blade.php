@@ -133,10 +133,10 @@
                             
                                 <!-- Tombol Submit -->
                                 <div class="form-group mt-3 text-center">
-                                    <button type="submit" class="btn btn-primary rounded submit px-3">Sign Up</button>
+                                    <button type="submit" class="btn btn-primary rounded submit px-3">Registrasi</button>
                                 </div>
                             
-                                <p class="text-center">Have a member? <a href="{{ route('login') }}">Sign In</a></p>
+                                <p class="text-center">Have a member? <a href="{{ route('login') }}">Login</a></p>
                             </form>
                             
                         </div>

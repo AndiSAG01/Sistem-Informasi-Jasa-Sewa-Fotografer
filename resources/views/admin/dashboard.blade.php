@@ -29,7 +29,7 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Prewedding</h5>
-                        <a href="{{ route('index_dp_prewedding') }}" class="btn btn-info btn-sm">Deposti
+                        <a href="{{ route('index_dp_prewedding') }}" class="btn btn-info btn-sm">Deposit
                             @if ($confir_dp_pre > 0)
                             <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_pre }} NEW ORDER</i>
                             @endif
@@ -50,7 +50,7 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Wedding</h5>
-                        <a href="{{ route('index_dp_wedding') }}" class="btn btn-info btn-sm">Deposti
+                        <a href="{{ route('index_dp_wedding') }}" class="btn btn-info btn-sm">Deposit
                             @if ($confir_dp_wed > 0)
                             <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_wed }} NEW ORDER</i>
                             @endif
@@ -118,7 +118,7 @@
                     
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Personal Photo</h5>
-                        <a href="{{ route('dp_personal') }}" class="btn btn-info btn-sm">Deposti
+                        <a href="{{ route('dp_personal') }}" class="btn btn-info btn-sm">Deposit
                             @if ($confir_dp_per > 0)
                             <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_per }} NEW ORDER</i>
                             @endif
@@ -139,7 +139,7 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Group Photo</h5>
-                        <a href="{{ route('dp_group') }}" class="btn btn-info btn-sm">Deposti
+                        <a href="{{ route('dp_group') }}" class="btn btn-info btn-sm">Deposit
                          @if ($confir_dp_gro > 0)
                             <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_gro }} NEW ORDER</i>
                             @endif
@@ -160,7 +160,7 @@
                     </div>
                     <div class="ms-2">
                         <h5 class="m-0 fw-semibold mb-2">Familly Photo</h5>
-                        <a href="{{ route('dp_familly') }}" class="btn btn-info btn-sm">Deposti
+                        <a href="{{ route('dp_familly') }}" class="btn btn-info btn-sm">Deposit
                          @if ($confir_dp_fam > 0)
                             <i class="icon-bell" style="color:#ff0000;">{{ $confir_dp_fam }} NEW ORDER</i>
                             @endif

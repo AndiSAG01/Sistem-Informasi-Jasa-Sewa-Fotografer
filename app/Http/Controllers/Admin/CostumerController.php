@@ -23,9 +23,8 @@ class CostumerController extends Controller
 
     public function destroy($id)
     {
-
-        // Delete the car record
-        User::where('id', $id)->delete();
+        $user = User::find($id);
+        $user->delete();
 
         return redirect()->back()->with('danger','Costumers Successfully Deleted');
     }

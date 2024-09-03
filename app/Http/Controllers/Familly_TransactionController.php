@@ -22,9 +22,7 @@ class Familly_TransactionController extends Controller
     public function reservation($id)
     {
         $familly = Familly::findorFail($id);
-        $user = User::findorFail($id);
-        $basic = Basic::findorFail($id);
-        return view('user.reservasi_familly.reservation_familly', compact('familly', 'basic', 'user'));
+        return view('user.reservasi_familly.reservation_familly', compact('familly'));
     }
 
     public function store_fam(Request $request)

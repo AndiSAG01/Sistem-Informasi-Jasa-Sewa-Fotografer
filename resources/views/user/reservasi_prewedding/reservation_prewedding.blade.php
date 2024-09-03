@@ -39,17 +39,17 @@
                                 @csrf
                                 <input type="hidden" name="prewedding_id" value="{{ $prewedding->id }}">
                                 <input type="hidden" name="user_id" value="{{ Auth()->user()->id }}">
-                                <input type="hidden" name="basic_id" value="{{ $basic->id }}">
+                                <input type="hidden" name="basic_id" value="{{ $prewedding->id }}">
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Name <span class="text-danger">*</span></label>
                                     <input type="text" name="name" class="form-control" id="inputEmail4" />
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputPassword4" class="form-label">Tanggal <span class="text-danger">*</span></label>
-                                    <input type="date" name="date" class="form-control" id="inputPassword4" onchange="checkDateInput()"/>
+                                    <input type="date" name="date" class="form-control" onchange="checkDateInput()" />
                                     @error('date')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-12">
                                     <label for="" class="form-label">Address <span class="text-danger">*</span></label>
@@ -76,4 +76,5 @@
             <!-- Row end -->
         </div>
     </section><!-- End Hero Section -->
+    
 @endsection

@@ -22,9 +22,7 @@ class Personal_TransactionController extends Controller
     public function reservation($id)
     {
         $personal = Personal::findorFail($id);
-        $user = User::findorFail($id);
-        $basic = Basic::findorFail($id);
-        return view('user.reservasi_personal.reservation_personal', compact('personal', 'basic', 'user'));
+        return view('user.reservasi_personal.reservation_personal', compact('personal'));
     }
 
     public function store_per(Request $request)

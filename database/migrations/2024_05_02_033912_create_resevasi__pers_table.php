@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('resevasi__pers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete(); //
             $table->foreignId('personal_id')->constrained('personals');
             $table->foreignId('basic_id')->constrained('basics');
             $table->string('name');

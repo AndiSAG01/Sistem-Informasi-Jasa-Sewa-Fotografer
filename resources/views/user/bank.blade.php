@@ -8,7 +8,7 @@
                 <img src="/asset/img/logo/dana.png" alt="" width="200px">
               </p>
               <p class="text-center text-black" style="font-family: 'Times New Roman', Times, serif"><h1>081216476094</h1></p>
-              <p><h3>A/N DEDE SYAH PUTERA</h3></p>
+              <p><h3>A/N WISNU PRAYOGA</h3></p>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
                 <img src="/asset/img/logo/bsi.png" alt="" width="200px">
               </p>
               <p class="text-center text-black" style="font-family: 'Times New Roman', Times, serif"><h1>7201261777</h1></p>
-              <p><h3>A/N DEDE SYAH PUTERA</h3></p>
+              <p><h3>A/N WISNU PRAYOGA</h3></p>
             </div>
           </div>
         </div>

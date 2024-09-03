@@ -22,9 +22,7 @@ class Aqiqah_TransactionController extends Controller
     public function reservation($id)
     {
         $aqiqah = Aqiqah::findorFail($id);
-        $user = User::findorFail($id);
-        $basic = Basic::findorFail($id);
-        return view('user.reservasi_aqiqah.reservation_aqiqah', compact('aqiqah', 'basic', 'user'));
+        return view('user.reservasi_aqiqah.reservation_aqiqah', compact('aqiqah'));
     }
 
     public function store_aqi(Request $request)

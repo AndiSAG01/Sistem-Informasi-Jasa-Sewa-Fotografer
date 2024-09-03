@@ -12,7 +12,7 @@ class Engagement_TransactionController extends Controller
 {
     public function transactions_eng()
     {
-       $resevasi = Resevasi_eng::where('user_id', Auth()->user()->id)->get();
+        $resevasi = Resevasi_eng::where('user_id', Auth()->user()->id)->get();
 
         // Tampilkan transaksi yang sesuai pada view
         return view('user.reservasi_engagement.transactions_engagement', compact('resevasi'));
@@ -22,13 +22,23 @@ class Engagement_TransactionController extends Controller
     public function reservation($id)
     {
         $engagement = Engagement::findorFail($id);
-        $user = User::findorFail($id);
-        $basic = Basic::findorFail($id);
-        return view('user.reservasi_engagement.reservation_engagement', compact('engagement', 'basic', 'user'));
+        return view('user.reservasi_engagement.reservation_engagement', compact('engagement'));
     }
 
     public function store_eng(Request $request)
     {
+        $request->validate([
+            'engagement_id' => 'required|string|exists:engagements,id',
+            'user_id' => 'required|string|exists:users,id',
+            'basic_id' => 'required|string|exists:basics,id',
+            'name' => 'required',
+            'date' => 'required|date|after_or_equal:today', // Ensures the date is today or in the future
+            'address' => 'required',
+            'selected' => 'required',
+            'status_dp' => 'nullable',
+            'status_pay' => 'nullable'
+        ]);
+        
         Resevasi_eng::create([
             'engagement_id' => $request->engagement_id,
             'user_id' => $request->user_id,
@@ -40,6 +50,8 @@ class Engagement_TransactionController extends Controller
             'status_dp' => $request->status_dp,
             'status_pay' => $request->status_pay,
         ]);
+        
+
         return redirect()->route('transaction_engagement');
     }
 
@@ -78,6 +90,4 @@ class Engagement_TransactionController extends Controller
 
         return redirect()->back()->with('danger', 'Successfully Deleted');
     }
-
-    
 }

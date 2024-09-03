@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.bootstrap5.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.css
 ">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.2/css/buttons.dataTables.css
@@ -110,7 +110,7 @@
                         <div class="dropdown ms-2">
                             <a class="dropdown-toggle d-flex align-items-center user-settings" href="#!"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span>{{ Auth::user()->name}}</span>
+                                <span>{{ Auth::user()->name }}</span>
                                 <img src="/assets/images/profil.jpg" class="img-3x m-2 me-0 rounded-3"
                                     alt="Admin Templates" />
                             </a>
@@ -195,45 +195,44 @@
     <script src="https://cdn.datatables.net/2.0.5/js/dataTables.bootstrap5.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.5/js/dataTables.js
-        "></script>
+            "></script>
     <script src=" https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js
-        "></script>
+            "></script>
     <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.dataTables.js
-        "></script>
+            "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js
-        "></script>
+            "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js
-        "></script>
+            "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js
-        "></script>
+            "></script>
     <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js
-        "></script>
+            "></script>
     <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.print.min.js
-        "></script>
+            "></script>
     <script>
- <script >
+        < script >
             $('#deskripsi').summernote({
                 placeholder: 'deskripsi',
                 tabsize: 2,
                 height: 00
             });
+    </>
+    <script>
+        new DataTable('#example');
     </script>
-	<script>
-		new DataTable('#example');
-	</script>
     @include('layouts.date')
-	<script>
-   
-   new DataTable('#myTable', {
-	   layout: {
-		   topStart: {
-			   buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-		   }
-	   }
-   });
-   </script>
+    <script>
+        new DataTable('#myTable', {
+            layout: {
+                topStart: {
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
+    </script>
 
-   
+
 
 </body>
 

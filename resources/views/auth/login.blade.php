@@ -30,7 +30,7 @@
                         <div class="login-wrap p-4 p-md-5">
                             <div class="d-flex">
                                 <div class="w-100">
-                                    <h3 class="mb-4">Sign In</h3>
+                                    <h3 class="mb-4">Login</h3>
                                 </div>
                             </div>
                             <form method="POST" action="{{ route('login') }}">
@@ -58,8 +58,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign
-                                        In</button>
+                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
                                 </div>
 
                             </form>
